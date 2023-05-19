@@ -27,8 +27,15 @@ public class Fila {
 	public void remove() {
 		if(filaVazia()) return;
 		
-		this.dados[this.primeiro] = 0;
-		this.primeiro++;
+		int[] novoDados = new int[10];
+		
+		for(int i = 0; i < this.ultimo; i++) {
+			if(i == 0) continue;
+			System.out.println("Dado -> " + this.dados[i]);
+			novoDados[i] = this.dados[i];
+		}
+		
+		this.dados = novoDados;
 	}
 	
 	public boolean filaVazia() {
